@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3be0e690-13fc-4c2c-ba5b-c3ac88c0c2cd" name="Default Changelist" comment="" />
+    <list default="true" id="3be0e690-13fc-4c2c-ba5b-c3ac88c0c2cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitting_and_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitting_and_analysis.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2LaW2XoljBHdPWLu99tUd6CVFaT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -16,7 +23,28 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="fitting_and_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PHY324_Cavendish" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fitting_and_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PHY324_Cavendish" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -38,6 +66,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.fitting_and_analysis" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,25 +84,45 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="815" y="418" key="Github.ShareDialog" timestamp="1676109698690">
+    <state x="815" y="418" key="Github.ShareDialog" timestamp="1676109903255">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="815" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1676109698690" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1676109775063">
+    <state x="815" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1676109903255" />
+    <state x="728" y="225" key="Github.UntrackedFilesDialog" timestamp="1676109907062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676109775063" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1676109775063">
+    <state x="728" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1676109907062" />
+    <state width="1882" height="282" key="GridCell.Tab.0.bottom" timestamp="1676112330486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676109775063" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1676109775062">
+    <state width="1882" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676112330486" />
+    <state width="1882" height="282" key="GridCell.Tab.0.center" timestamp="1676112330486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676109775062" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1676109775063">
+    <state width="1882" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676112330486" />
+    <state width="1882" height="282" key="GridCell.Tab.0.left" timestamp="1676112330486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676109775063" />
+    <state width="1882" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676112330486" />
+    <state width="1882" height="282" key="GridCell.Tab.0.right" timestamp="1676112330486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1882" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676112330486" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1676110316549">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676110316549" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1676110316549">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676110316549" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1676110316549">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676110316549" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1676110316549">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676110316549" />
   </component>
 </project>

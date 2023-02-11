@@ -57,15 +57,6 @@ class Output():
     def baseplot_errorbars_with_markers(self, ax, x, y, yerr=None, xerr=None, **kwargs):
         ax.errorbar(x, y, yerr=yerr, xerr=xerr, linestyle='None', capsize=2, marker='.', **kwargs)
 
-    def to_sf(self, num, sf=3):
-        # result = '%.*g' % (sf, num)
-        result = (f'{num:.{sf}g}')
-        result = float(result)
-        decimal = Decimal(str(num))
-        if decimal.as_tuple().exponent >= 0:
-            result = int(result)
-        return result
-
     def get_dp(self, num): # returns number of decimal places
         decimal = Decimal(str(num))
         if decimal.as_tuple().exponent >= 0:
@@ -73,6 +64,26 @@ class Output():
         else:
             dp = -decimal.as_tuple().exponent
         return dp
+
+    def to_sf(self, num, sf=3):
+        # # result = '%.*g' % (sf, num)
+        # # result = (f'{num:.{sf}g}')
+        # result = '{:g}'.format(float('{:.{p}g}'.format(num, p=sf)))
+        # # result = float(result)
+        # # decimal = Decimal(str(result))
+        # # print(decimal.as_tuple().exponent)
+        # # if decimal.as_tuple().exponent >= 0:
+        # if len(result.split('.')) == 1 or all(result.split('.')) == '0':
+        #     result = int(result)
+        # else:
+        #     result = float(result)
+        # return result
+        result = np.format_float_positional(num, precision=sf, fractional=False, trim='-')
+        if '.' in result:
+            result = float(result)
+        else:
+            result = int(result)
+        return result
 
     def print_with_uncertainty(self, num, uncertainty):
         rounded_uncertainty = self.to_sf(uncertainty, sf=1)
@@ -95,6 +106,14 @@ class Output():
 
 
 # Output = Output()
-# num = 3453478.2981732
-# uncert = 0.938274
-# print(Output.print_with_uncertainty(num, uncert))
+# # num = 3453478.2981732
+# # uncert = 6.64
+# # decimal = Decimal(str(uncert))
+# # print(decimal.as_tuple().exponent, Decimal(str(Output.to_sf(6.64, 1))).as_tuple().exponent, '??')
+# # print(Output.to_sf(6.64, 1))
+# # print(Output.print_with_uncertainty(num, uncert))
+# # print(int(round(6.64, 0)))
+# uncert = 6.64
+# print(Output.to_sf(uncert, 1))
+# print(Output.get_dp(uncert))
+# print(Output.get_dp(Output.to_sf(uncert, 1)))
