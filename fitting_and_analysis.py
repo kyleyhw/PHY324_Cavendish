@@ -59,7 +59,7 @@ class Output():
         ax.errorbar(x, y, yerr=yerr, xerr=xerr, linestyle='None', capsize=2, marker='.', **kwargs)
 
     def get_dp(self, num): # returns number of decimal places
-        if not math.isinf(num):
+        if type(num) == float:
             decimal = Decimal(str(num))
             if decimal.as_tuple().exponent >= 0:
                 dp = -int(np.log10(num))

@@ -51,7 +51,6 @@ class Linear():
         result = self.function(x, *self.popt)
         return result
 
-
 class DecayingSinusoid():
     def __init__(self, popt, parameter_errors, units_for_parameters=None):
         self.popt = popt
@@ -62,7 +61,7 @@ class DecayingSinusoid():
         self.number_of_parameters = self.function.number_of_parameters
         self.parameter_names = ('B', 'A', 'T', r'$\phi$', r'$\frac{1}{\tau}$')
         if units_for_parameters == None:
-            self.units_for_parameters = tuple(np.zeros(self.number_of_parameters))
+            self.units_for_parameters = tuple(np.zeros(shape=self.number_of_parameters, dtype=str))
         else:
             self.units_for_parameters = units_for_parameters
 

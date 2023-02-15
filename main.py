@@ -14,18 +14,26 @@ import fitting
 def run_main(filename, show=False, save=False):
     data = data_loader.DataLoader(filename)
     model = fit_models.DecayingSinusoid()
-    
-    fit = fitting.Fitting(model=model, x=data.x, x_error=data.x_error, y_measured=data.y, y_error=data.y_error,
-                          units_for_parameters=('', '', '', '', ''), p0=(0.14, 0.016, 2*np.pi/0.02, -13, 100))
+
+    units_for_parameters = None # ('B', 'A', 'T', r'$\phi$', r'$\frac{1}{\tau}$')
+
+    try:
+        fit = fitting.Fitting(model=model, x=data.x, x_error=data.x_error, y_measured=data.y, y_error=data.y_error,
+                              units_for_parameters=units_for_parameters, p0=(0, 0.02, 250, 1, 0.01))
+    except RuntimeError:
+        fit = fitting.Fitting(model=model, x=data.x, x_error=data.x_error, y_measured=data.y, y_error=data.y_error,
+                              units_for_parameters=units_for_parameters, p0=(0, 0.02, 250, -1, 0.01))
     
     fig, ax = plt.subplots(1, 1, figsize=(16, 9))
     
     fit.scatter_plot_data_and_fit(ax)
-    
-    ax.set_title('')
+
+    plot_title = filename.split('_')[0] + ' trial ' + filename.split('_')[1]
+
+    ax.set_title(plot_title)
     ax.grid(visible=True, which='both')
-    ax.set_ylabel('')
-    ax.set_xlabel('')
+    ax.set_ylabel(r'x / m')
+    ax.set_xlabel(r'time / t')
     
     if save:
             fig.savefig('fits/%s_plot.png' % filename)
@@ -42,6 +50,7 @@ all_filenames = {**CCW_filenames, **CW_filenames, **Neutral_filenames}
 
 def run_all(all_filenames):
     for filename in all_filenames:
+        print(filename)
         run_main(filename, show=True, save=True)
 
 run_all(all_filenames)

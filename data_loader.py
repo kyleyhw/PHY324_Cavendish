@@ -1,4 +1,7 @@
 import numpy as np
+
+import error_propagation
+ErrorPropagation = error_propagation.ErrorPropagation()
 from fitting_and_analysis import CurveFitFuncs
 cff = CurveFitFuncs()
 
@@ -13,12 +16,14 @@ class DataLoader():
         
         raw_times = [time.split(':') for time in self.full_data[0][start_sample:]]
         raw_times = np.array([float(h) * 3600 + float(m) * 60 + float(s) for [h, m, s] in raw_times])
-        
+
+        l = 1
+
         self.zeroed_times = cff.remove_systematic_error(raw_times)
-        self.zeroed_positions = cff.remove_systematic_error(raw_positions)
+        self.angles = np.arctan(raw_positions / l)
         
-        self.y = self.zeroed_positions
-        self.y_error = np.zeros_like(self.zeroed_positions) + 0.005
+        self.y = raw_positions
+        self.y_error = np.zeros_like(self.angles) + 0.0005
         
         self.x = self.zeroed_times
         self.x_error = np.zeros_like(self.zeroed_times) + 0.0005

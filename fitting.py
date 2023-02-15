@@ -7,6 +7,7 @@ font = {'family' : 'DejaVu Sans',
 rc('font', **font)
 from matplotlib.offsetbox import AnchoredText
 
+
 from fitting_and_analysis import CurveFitFuncs
 from fitting_and_analysis import CurveFitAnalysis
 from fitting_and_analysis import Output
