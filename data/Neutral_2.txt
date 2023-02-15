@@ -1,5 +1,5 @@
-# Chart Recorder Data File Thu, Feb 09, 2023 2:54 PM
-# Time (s)	Position (m)
+Chart Recorder Data File Thu, Feb 09, 2023 2:54 PM
+Time (s)	Position (m)
 14:02:08.117	0.186000
 14:02:09.118	0.186000
 14:02:10.118	0.186000

@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import scipy.stats as spstats
 from decimal import Decimal
 
@@ -58,11 +59,14 @@ class Output():
         ax.errorbar(x, y, yerr=yerr, xerr=xerr, linestyle='None', capsize=2, marker='.', **kwargs)
 
     def get_dp(self, num): # returns number of decimal places
-        decimal = Decimal(str(num))
-        if decimal.as_tuple().exponent >= 0:
-            dp = -int(np.log10(num))
+        if not math.isinf(num):
+            decimal = Decimal(str(num))
+            if decimal.as_tuple().exponent >= 0:
+                dp = -int(np.log10(num))
+            else:
+                dp = -decimal.as_tuple().exponent
         else:
-            dp = -decimal.as_tuple().exponent
+            dp = 9
         return dp
 
     def to_sf(self, num, sf=3):
@@ -79,10 +83,10 @@ class Output():
         #     result = float(result)
         # return result
         result = np.format_float_positional(num, precision=sf, fractional=False, trim='-')
-        if '.' in result:
-            result = float(result)
-        else:
-            result = int(result)
+        # if '.' in result:
+        #     result = float(result)
+        # else:
+        #     result = int(result)
         return result
 
     def print_with_uncertainty(self, num, uncertainty):
@@ -95,7 +99,7 @@ class Output():
             rounded_num = int(rounded_num)
 
         rounded_uncertainty = str(rounded_uncertainty)
-        rounded_num = f'{rounded_num:.{uncertainty_dp}f}' # str(rounded_num)
+        rounded_num = str(rounded_num)
 
         if uncertainty_dp > 0 and rounded_num_dp <= 0:
             rounded_num += '.'

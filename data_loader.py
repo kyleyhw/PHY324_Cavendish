@@ -4,7 +4,8 @@ cff = CurveFitFuncs()
 
 class DataLoader():
     def __init__(self, filename):
-        self.full_data = np.loadtxt(filename, dtype=str).T
+        directory = 'data/%s.txt' % filename
+        self.full_data = np.loadtxt(directory, dtype=str, skiprows=2).T
         
         start_sample = 20
         
@@ -17,7 +18,7 @@ class DataLoader():
         self.zeroed_positions = cff.remove_systematic_error(raw_positions)
         
         self.y = self.zeroed_positions
-        self.y_error = np.zeros_like(self.zeroed_positions) + 0.001
+        self.y_error = np.zeros_like(self.zeroed_positions) + 0.005
         
         self.x = self.zeroed_times
-        self.x_error = np.zeros_like(self.zeroed_times) + 0.001
+        self.x_error = np.zeros_like(self.zeroed_times) + 0.0005

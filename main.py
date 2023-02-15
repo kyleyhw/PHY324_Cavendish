@@ -15,7 +15,8 @@ def run_main(filename, show=False, save=False):
     data = data_loader.DataLoader(filename)
     model = fit_models.DecayingSinusoid()
     
-    fit = fitting.Fitting(model=model, x=data.x, x_error=data.x_error, y_measured=data.y, y_error=data.y_error, units_for_parameters=('', '', '', '', ''), p0=(0.14, 0.016, 2*np.pi/0.02, -13, 100))
+    fit = fitting.Fitting(model=model, x=data.x, x_error=data.x_error, y_measured=data.y, y_error=data.y_error,
+                          units_for_parameters=('', '', '', '', ''), p0=(0.14, 0.016, 2*np.pi/0.02, -13, 100))
     
     fig, ax = plt.subplots(1, 1, figsize=(16, 9))
     
@@ -27,12 +28,20 @@ def run_main(filename, show=False, save=False):
     ax.set_xlabel('')
     
     if save:
-            fig.savefig('PHY324_Cavendish_' + filename + '.png')
+            fig.savefig('fits/%s_plot.png' % filename)
     if show:
             fig.show()
             
+# filename labels: 0 -> feb2, 1 -> feb7, 2 -> feb9
 
+CCW_filenames = {'CCW_%d' % trial : 'CCW_%d' % trial for trial in [1, 2]}
+CW_filenames = {'CW_%d' % trial : 'CW_%d' % trial for trial in [1, 2]}
+Neutral_filenames = {'Neutral_%d' % trial : 'Neutral_%d' % trial for trial in [1, 2]}
 
-filename = 'Feb9Trial3CCW.txt'
+all_filenames = {**CCW_filenames, **CW_filenames, **Neutral_filenames}
 
-run_main(filename, show=True, save=True)
+def run_all(all_filenames):
+    for filename in all_filenames:
+        run_main(filename, show=True, save=True)
+
+run_all(all_filenames)
