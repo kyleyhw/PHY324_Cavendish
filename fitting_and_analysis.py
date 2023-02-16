@@ -1,5 +1,4 @@
 import numpy as np
-import math
 import scipy.stats as spstats
 from decimal import Decimal
 
@@ -59,14 +58,11 @@ class Output():
         ax.errorbar(x, y, yerr=yerr, xerr=xerr, linestyle='None', capsize=2, marker='.', **kwargs)
 
     def get_dp(self, num): # returns number of decimal places
-        if type(num) == float:
-            decimal = Decimal(str(num))
-            if decimal.as_tuple().exponent >= 0:
-                dp = -int(np.log10(num))
-            else:
-                dp = -decimal.as_tuple().exponent
+        decimal = Decimal(str(num))
+        if decimal.as_tuple().exponent >= 0:
+            dp = -int(np.log10(num))
         else:
-            dp = 9
+            dp = -decimal.as_tuple().exponent
         return dp
 
     def to_sf(self, num, sf=3):

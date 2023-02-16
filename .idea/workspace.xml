@@ -19,16 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3be0e690-13fc-4c2c-ba5b-c3ac88c0c2cd" name="Default Changelist" comment="produces good plots! still x vs t plots">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3be0e690-13fc-4c2c-ba5b-c3ac88c0c2cd" name="Default Changelist" comment="produces good plots, residuals do not work for all plots">
       <change beforePath="$PROJECT_DIR$/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fits/CCW_1_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fits/CCW_2_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fits/CW_1_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fits/CW_2_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fits/Neutral_1_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fits/Neutral_2_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitting.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitting_and_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitting_and_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CCW_1_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_1_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CCW_1_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_1_residual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CCW_2_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_2_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CCW_2_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_2_residual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CW_1_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_1_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CW_1_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_1_residual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CW_2_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_2_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/CW_2_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_2_residual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/Neutral_1_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_1_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/Neutral_1_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_1_residual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/Neutral_2_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_2_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/Neutral_2_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_2_residual.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +61,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.fitting_and_analysis">
     <configuration name="fitting_and_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -136,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676444274710</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="produces good plots, residuals do not work for all plots">
+      <created>1676530558524</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676530558524</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,7 +167,8 @@
     <MESSAGE value="fixed Output.to_sf() in fitting_and_analysis.py" />
     <MESSAGE value="produces some plots but some covariances are infinity" />
     <MESSAGE value="produces good plots! still x vs t plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="produces good plots! still x vs t plots" />
+    <MESSAGE value="produces good plots, residuals do not work for all plots" />
+    <option name="LAST_COMMIT_MESSAGE" value="produces good plots, residuals do not work for all plots" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1676498261883">
@@ -170,22 +183,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1676109907062" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1676530423078">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1676530789531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676530423078" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1676530423078">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676530789531" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1676530789531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676530423078" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1676530423078">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676530789531" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1676530789531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676530423078" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1676530423078">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676530789531" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1676530789531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676530423078" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676530789531" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1676110316549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

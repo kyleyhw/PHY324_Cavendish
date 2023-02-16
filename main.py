@@ -32,7 +32,7 @@ def run_main(filename, show=False, save=False):
 
     ax.set_title(plot_title)
     ax.grid(visible=True, which='both')
-    ax.set_ylabel(r'$\theta$ / rad')
+    ax.set_ylabel(r'x / m')
     ax.set_xlabel(r'time / t')
     
     if save:
