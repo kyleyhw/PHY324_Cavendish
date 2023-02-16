@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rc
 font = {'family' : 'DejaVu Sans',
         'weight' : 'normal',
-        'size'   : 22}
+        'size'   : 30}
 rc('font', **font)
 import numpy as np
 
@@ -15,7 +15,7 @@ def run_main(filename, show=False, save=False):
     data = data_loader.DataLoader(filename)
     model = fit_models.DecayingSinusoid()
 
-    units_for_parameters = None # ('B', 'A', 'T', r'$\phi$', r'$\frac{1}{\tau}$')
+    units_for_parameters = ('rad', 'rad', 's', '(unitless)', r's$^{-1}$')
 
     try:
         fit = fitting.Fitting(model=model, x=data.x, x_error=data.x_error, y_measured=data.y, y_error=data.y_error,
@@ -32,13 +32,32 @@ def run_main(filename, show=False, save=False):
 
     ax.set_title(plot_title)
     ax.grid(visible=True, which='both')
-    ax.set_ylabel(r'x / m')
+    ax.set_ylabel(r'$\theta$ / rad')
     ax.set_xlabel(r'time / t')
     
     if save:
-            fig.savefig('fits/%s_plot.png' % filename)
+            fig.savefig('graphs/%s_plot.png' % filename)
     if show:
             fig.show()
+
+    fig.clear()
+
+
+    fig, ax = plt.subplots(1, 1, figsize=(16, 9))
+
+    fit.plot_residuals(ax)
+
+    plot_title = filename.split('_')[0] + ' trial ' + filename.split('_')[1] + ' residuals'
+
+    ax.set_title(plot_title)
+    ax.grid(visible=True, which='both')
+    ax.set_ylabel(r'residuals / m')
+    ax.set_xlabel(r'time / t')
+
+    if save:
+        fig.savefig('graphs/%s_residual.png' % filename)
+    if show:
+        fig.show()
             
 # filename labels: 0 -> feb2, 1 -> feb7, 2 -> feb9
 
