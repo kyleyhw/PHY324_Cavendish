@@ -2,6 +2,8 @@ import numpy as np
 
 import error_propagation
 ErrorPropagation = error_propagation.ErrorPropagation()
+from fitting_and_analysis import Output
+Output = Output()
 
 R_best_guesses = np.array([63.82, 63.51, 63.87, 63.80, 63.73, 63.79]) / 1000
 R_uncertainties = np.zeros_like(R_best_guesses) + 0.1 / 1000
@@ -111,7 +113,7 @@ CCW_2_G_best_guess, CCW_2_G_uncertainty = G_guess(CCW_2_b_best_guess, d_best_gue
 
 
 
-print(CW_1_G_best_guess, CW_1_G_uncertainty)
-print(CCW_1_G_best_guess, CCW_1_G_uncertainty)
-print(CW_2_G_best_guess, CW_2_G_uncertainty)
-print(CCW_2_G_best_guess, CCW_2_G_uncertainty)
+G_best_guesses = np.array([CW_1_G_best_guess, CCW_1_G_best_guess, CW_2_G_best_guess, CCW_2_G_best_guess])
+G_uncertainties = np.array([CW_1_G_uncertainty, CCW_1_G_uncertainty, CW_2_G_uncertainty, CCW_2_G_uncertainty])
+for i in range(len(G_best_guesses)):
+    print(Output.print_with_uncertainty(G_best_guesses[i], G_uncertainties[i]))
