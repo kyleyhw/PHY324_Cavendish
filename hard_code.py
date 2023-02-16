@@ -21,12 +21,12 @@ l_uncertainties = np.zeros_like(l_best_guesses) + 0.002
 l_best_guess, l_uncertainty = ErrorPropagation.average(l_best_guesses, l_uncertainties)
 
 eq_1_best_guess, eq_1_uncertainty = 0.162258, 0.000009
-CW_1_best_guess, CW_1_uncertainty = 0.141559 - eq_1_best_guess, ErrorPropagation.root_sum_of_squares(np.array([0.00004, eq_1_uncertainty]))
-CCW_1_best_guess, CCW_1_uncertainty = 0.18356 - eq_1_best_guess, ErrorPropagation.root_sum_of_squares(np.array([0.00001, eq_1_uncertainty]))
+CW_1_best_guess, CW_1_uncertainty = np.abs(0.141559 - eq_1_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.00004, eq_1_uncertainty]))
+CCW_1_best_guess, CCW_1_uncertainty = np.abs(0.18356 - eq_1_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.00001, eq_1_uncertainty]))
 
 eq_2_best_guess, eq_2_uncertainty = 0.164589, 0.000009
-CW_2_best_guess, CW_2_uncertainty = 0.145376 - eq_2_best_guess, ErrorPropagation.root_sum_of_squares(np.array([0.000009, eq_2_uncertainty]))
-CCW_2_best_guess, CCW_2_uncertainty = 0.18783 - eq_2_best_guess, ErrorPropagation.root_sum_of_squares(np.array([0.00001, eq_2_uncertainty]))
+CW_2_best_guess, CW_2_uncertainty = np.abs(0.145376 - eq_2_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.000009, eq_2_uncertainty]))
+CCW_2_best_guess, CCW_2_uncertainty =np.abs( 0.18783 - eq_2_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.00001, eq_2_uncertainty]))
 
 CW_1_angle_best_guess, CW_1_angle_uncertainty = CW_1_best_guess / (2*l_best_guess), ErrorPropagation.root_sum_of_squares(np.array([CW_1_uncertainty, 2*l_uncertainty]))
 CCW_1_angle_best_guess, CCW_1_angle_uncertainty = CCW_1_best_guess / (2*l_best_guess), ErrorPropagation.root_sum_of_squares(np.array([CCW_1_uncertainty, 2*l_uncertainty]))
@@ -67,10 +67,17 @@ CCW_1_T_best_guess, CCW_1_T_uncertainty = 305.98, 0.05
 CW_2_T_best_guess, CW_2_T_uncertainty = 303.12, 0.05
 CCW_2_T_best_guess, CCW_2_T_uncertainty = 305.83, 0.05
 
+'''
 CW_1_S_best_guess, CW_1_S_uncertainty = 0.05366, 0.00004
 CCW_1_S_best_guess, CCW_1_S_uncertainty = 0.02147, 0.00005
 CW_2_S_best_guess, CW_2_S_uncertainty = 0.01381, 0.00004
 CCW_2_S_best_guess, CCW_2_S_uncertainty = 0.02052, 0.00005
+'''
+
+CW_1_S_best_guess, CW_1_S_uncertainty = CW_1_best_guess, CW_1_uncertainty
+CCW_1_S_best_guess, CCW_1_S_uncertainty = CCW_1_best_guess, CCW_1_uncertainty
+CW_2_S_best_guess, CW_2_S_uncertainty = CW_2_best_guess, CW_2_uncertainty
+CCW_2_S_best_guess, CCW_2_S_uncertainty = CCW_2_best_guess, CCW_2_uncertainty
 
 m_best_guess, m_uncertainty = ErrorPropagation.average(np.array([1.4723, 1.4776]), np.array([0.05, 0.05]))
 
