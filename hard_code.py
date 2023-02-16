@@ -18,7 +18,7 @@ d_best_guess = 0.05
 d_uncertainty = 0
 
 l_best_guesses = np.array([4.443, 4.442, 4.441, 4.453, 4.455])
-l_uncertainties = np.zeros_like(l_best_guesses) + 0.002
+l_uncertainties = np.zeros_like(l_best_guesses) + 0.005
 
 l_best_guess, l_uncertainty = ErrorPropagation.average(l_best_guesses, l_uncertainties)
 
@@ -28,7 +28,7 @@ CCW_1_best_guess, CCW_1_uncertainty = np.abs(0.18356 - eq_1_best_guess), ErrorPr
 
 eq_2_best_guess, eq_2_uncertainty = 0.164589, 0.000009
 CW_2_best_guess, CW_2_uncertainty = np.abs(0.145376 - eq_2_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.000009, eq_2_uncertainty]))
-CCW_2_best_guess, CCW_2_uncertainty =np.abs( 0.18783 - eq_2_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.00001, eq_2_uncertainty]))
+CCW_2_best_guess, CCW_2_uncertainty =np.abs(0.18783 - eq_2_best_guess), ErrorPropagation.root_sum_of_squares(np.array([0.00001, eq_2_uncertainty]))
 
 '''
 CW_1_S_best_guess, CW_1_S_uncertainty = 0.05366, 0.00004
@@ -117,3 +117,7 @@ G_best_guesses = np.array([CW_1_G_best_guess, CCW_1_G_best_guess, CW_2_G_best_gu
 G_uncertainties = np.array([CW_1_G_uncertainty, CCW_1_G_uncertainty, CW_2_G_uncertainty, CCW_2_G_uncertainty])
 for i in range(len(G_best_guesses)):
     print(Output.print_with_uncertainty(G_best_guesses[i], G_uncertainties[i]))
+    
+print()
+print('average is:')
+print(Output.print_with_uncertainty(*ErrorPropagation.average(G_best_guesses, G_uncertainties)))
