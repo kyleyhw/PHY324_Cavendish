@@ -19,23 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3be0e690-13fc-4c2c-ba5b-c3ac88c0c2cd" name="Default Changelist" comment="fixed uncertainty outputting, changed back to x instead of theta in data loading and plots">
-      <change afterPath="$PROJECT_DIR$/data/hard_code.py" afterDir="false" />
+    <list default="true" id="3be0e690-13fc-4c2c-ba5b-c3ac88c0c2cd" name="Default Changelist" comment="corrected residuals (ordering of parameters was wrong, and partial wrt T was wrong), all working now">
+      <change afterPath="$PROJECT_DIR$/hard_code.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hard_code.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fitting.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/CCW_1_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_1_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/CCW_1_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_1_residual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/CCW_2_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_2_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/CCW_2_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CCW_2_residual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/CW_1_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_1_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/CW_1_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_1_residual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/CW_2_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_2_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/CW_2_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/CW_2_residual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/Neutral_1_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_1_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/Neutral_1_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_1_residual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/Neutral_2_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_2_plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/Neutral_2_residual.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/Neutral_2_residual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +56,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kyle\PycharmProjects\PHY324\PHY324_Cavendish" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.hard_code">
     <configuration name="fitting_and_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,6 +75,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fitting_and_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hard_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Kyle\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hard_code.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -105,9 +125,11 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.fitting_and_analysis" />
+      <item itemvalue="Python.hard_code" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.hard_code" />
         <item itemvalue="Python.fitting_and_analysis" />
       </list>
     </recent_temporary>
@@ -156,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676530877042</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="corrected residuals (ordering of parameters was wrong, and partial wrt T was wrong), all working now">
+      <created>1676535802988</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676535802988</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,7 +206,8 @@
     <MESSAGE value="produces good plots! still x vs t plots" />
     <MESSAGE value="produces good plots, residuals do not work for all plots" />
     <MESSAGE value="fixed uncertainty outputting, changed back to x instead of theta in data loading and plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed uncertainty outputting, changed back to x instead of theta in data loading and plots" />
+    <MESSAGE value="corrected residuals (ordering of parameters was wrong, and partial wrt T was wrong), all working now" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected residuals (ordering of parameters was wrong, and partial wrt T was wrong), all working now" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1676498261883">
@@ -192,22 +222,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1676109907062" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1676535690781">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1676541203843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676535690781" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1676535690781">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1676541203843" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1676541203842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676535690781" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1676535690781">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1676541203842" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1676541203842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676535690781" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1676535690781">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1676541203842" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1676541203843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676535690781" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676541203843" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1676110316549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -224,9 +254,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1676110316549" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1676530893433">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1676535804519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1676530893433" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1676535804519" />
   </component>
 </project>

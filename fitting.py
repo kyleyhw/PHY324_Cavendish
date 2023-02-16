@@ -66,7 +66,7 @@ class Fitting():
         (error_B, error_A, error_T, error_phi, error_exponential_factor) = self.parameter_errors
 
         def df_dB(t):
-            return 0
+            return 1
 
         def df_dA(t):
             return np.exp(-t * best_exponential_factor) * np.sin((2*np.pi/best_T) * t + best_phi)
