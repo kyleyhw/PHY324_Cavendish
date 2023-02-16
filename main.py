@@ -33,7 +33,7 @@ def run_main(filename, show=False, save=False):
     ax.set_title(plot_title)
     ax.grid(visible=True, which='both')
     ax.set_ylabel(r'x / m')
-    ax.set_xlabel(r'time / t')
+    ax.set_xlabel(r'time / s')
     
     if save:
             fig.savefig('graphs/%s_plot.png' % filename)
@@ -52,7 +52,7 @@ def run_main(filename, show=False, save=False):
     ax.set_title(plot_title)
     ax.grid(visible=True, which='both')
     ax.set_ylabel(r'residuals / m')
-    ax.set_xlabel(r'time / t')
+    ax.set_xlabel(r'time / s')
 
     if save:
         fig.savefig('graphs/%s_residual.png' % filename)

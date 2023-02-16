@@ -61,8 +61,9 @@ class Fitting():
         cff = CurveFitFuncs()
 
         residuals = cff.residual(self.y_measured, self.y_predicted)
-        (best_B, best_A, best_T, best_exponential_factor, best_phi) = self.popt
-        (error_B, error_A, error_T, error_exponential_factor, error_phi) = self.parameter_errors
+
+        (best_B, best_A, best_T, best_phi, best_exponential_factor) = self.popt
+        (error_B, error_A, error_T, error_phi, error_exponential_factor) = self.parameter_errors
 
         def df_dB(t):
             return 0
@@ -74,16 +75,16 @@ class Fitting():
             return -t * best_A * np.exp(-t * best_exponential_factor) * np.sin((2*np.pi/best_T) * t + best_phi)
 
         def df_dT(t):
-            return 2 * np.pi * t * best_A * np.exp(-t * best_exponential_factor) * np.cos((2*np.pi/best_T) * t + best_phi)
+            return (-2 * np.pi * t / best_T**2) * best_A * np.exp(-t * best_exponential_factor) * np.cos((2*np.pi/best_T) * t + best_phi)
 
         def df_dphi(t):
             return best_A * np.exp(-t * best_exponential_factor) * np.cos((2*np.pi/best_T) * t + best_phi)
 
-        def residual_error(t):
-            root_sum_of_squares = (error_B * df_dB(t))**2 + (error_A * df_dA(t))**2 + (error_T * df_dT(t))**2 + (error_exponential_factor * df_dexpfactor(t))**2 + (error_phi * df_dphi(t))**2
-            return np.sqrt(root_sum_of_squares)
+        def error_in_prediction(t):
+            sum_of_squares = (error_B * df_dB(t))**2 + (error_A * df_dA(t))**2 + (error_T * df_dT(t))**2 + (error_exponential_factor * df_dexpfactor(t))**2 + (error_phi * df_dphi(t))**2
+            return np.sqrt(sum_of_squares)
 
-        error_in_residuals = np.sqrt(self.y_error**2 + residual_error(self.x)**2)
+        error_in_residuals = np.sqrt(self.y_error**2 + error_in_prediction(self.x)**2)
 
         Output.baseplot_errorbars(ax=ax, x=self.x, y=residuals, yerr=error_in_residuals, xerr=None, label='residuals')
 
