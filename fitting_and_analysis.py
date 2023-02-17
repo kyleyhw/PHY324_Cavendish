@@ -102,7 +102,7 @@ class Output():
             for i in range(uncertainty_dp - rounded_num_dp):
                 rounded_num += '0'
 
-        return rounded_num + '$\pm$' + rounded_uncertainty
+        return '$' + rounded_num + ' \pm ' + rounded_uncertainty + '$'
 
 
 # Output = Output()

@@ -98,6 +98,25 @@ CCW_2_beta_guess, CCW_2_beta_uncertainty = beta_guess(CCW_2_b_best_guess, d_best
 
 
 
+CW_1_raw_G_best_guess, CW_1_raw_G_uncertainty = G_guess(CW_1_b_best_guess, d_best_guess, CW_1_S_best_guess, m_best_guess, CW_1_T_best_guess, l_best_guess),\
+    G_uncertainty(CW_1_b_best_guess, d_best_guess, CW_1_S_best_guess, m_best_guess, CW_1_T_best_guess, l_best_guess, CW_1_b_uncertainty, CW_1_S_uncertainty, m_uncertainty, CW_1_T_uncertainty, l_uncertainty)
+
+CCW_1_raw_G_best_guess, CCW_1_raw_G_uncertainty = G_guess(CCW_1_b_best_guess, d_best_guess, CCW_1_S_best_guess, m_best_guess, CCW_1_T_best_guess, l_best_guess),\
+    G_uncertainty(CCW_1_b_best_guess, d_best_guess, CCW_1_S_best_guess, m_best_guess, CCW_1_T_best_guess, l_best_guess, CCW_1_b_uncertainty, CCW_1_S_uncertainty, m_uncertainty, CCW_1_T_uncertainty, l_uncertainty)
+
+CW_2_raw_G_best_guess, CW_2_raw_G_uncertainty = G_guess(CW_2_b_best_guess, d_best_guess, CW_2_S_best_guess, m_best_guess, CW_2_T_best_guess, l_best_guess),\
+    G_uncertainty(CW_2_b_best_guess, d_best_guess, CW_2_S_best_guess, m_best_guess, CW_2_T_best_guess, l_best_guess, CW_2_b_uncertainty, CW_2_S_uncertainty, m_uncertainty, CW_2_T_uncertainty, l_uncertainty)
+
+CCW_2_raw_G_best_guess, CCW_2_raw_G_uncertainty = G_guess(CCW_2_b_best_guess, d_best_guess, CCW_2_S_best_guess, m_best_guess, CCW_2_T_best_guess, l_best_guess),\
+    G_uncertainty(CCW_2_b_best_guess, d_best_guess, CCW_2_S_best_guess, m_best_guess, CCW_2_T_best_guess, l_best_guess, CCW_2_b_uncertainty, CCW_2_S_uncertainty, m_uncertainty, CCW_2_T_uncertainty, l_uncertainty)
+
+raw_G_best_guesses = np.array([CW_1_raw_G_best_guess, CCW_1_raw_G_best_guess, CW_2_raw_G_best_guess, CCW_2_raw_G_best_guess])
+raw_G_uncertainties = np.array([CW_1_raw_G_uncertainty, CCW_1_raw_G_uncertainty, CW_2_raw_G_uncertainty, CCW_2_raw_G_uncertainty])
+for i in range(len(raw_G_best_guesses)):
+    print('raw G', Output.print_with_uncertainty(raw_G_best_guesses[i], raw_G_uncertainties[i]))
+
+print()
+
 
 CW_1_G_best_guess, CW_1_G_uncertainty = G_guess(CW_1_b_best_guess, d_best_guess, CW_1_S_best_guess, m_best_guess, CW_1_T_best_guess, l_best_guess) / CW_1_beta_guess,\
     G_uncertainty(CW_1_b_best_guess, d_best_guess, CW_1_S_best_guess, m_best_guess, CW_1_T_best_guess, l_best_guess, CW_1_b_uncertainty, CW_1_S_uncertainty, m_uncertainty, CW_1_T_uncertainty, l_uncertainty)
@@ -116,8 +135,38 @@ CCW_2_G_best_guess, CCW_2_G_uncertainty = G_guess(CCW_2_b_best_guess, d_best_gue
 G_best_guesses = np.array([CW_1_G_best_guess, CCW_1_G_best_guess, CW_2_G_best_guess, CCW_2_G_best_guess])
 G_uncertainties = np.array([CW_1_G_uncertainty, CCW_1_G_uncertainty, CW_2_G_uncertainty, CCW_2_G_uncertainty])
 for i in range(len(G_best_guesses)):
-    print(Output.print_with_uncertainty(G_best_guesses[i], G_uncertainties[i]))
+    print('scaled G', Output.print_with_uncertainty(G_best_guesses[i], G_uncertainties[i]))
     
 print()
 print('average is:')
 print(Output.print_with_uncertainty(*ErrorPropagation.average(G_best_guesses, G_uncertainties)))
+
+
+T_best_guesses = np.array([CW_1_T_best_guess, CCW_1_T_best_guess, CW_2_T_best_guess, CCW_2_T_best_guess])
+T_uncertainties = np.array([CW_1_T_uncertainty, CCW_1_T_uncertainty, CW_2_T_uncertainty, CCW_2_T_uncertainty])
+
+def k_best_guess(m, d, T):
+    result = 8 * np.pi**2 * m * d / (T**2)
+    return result
+
+def k_uncertainty(m, d, T, u_m, u_d, u_T):
+    dk_dm = 8 * np.pi**2 * d**2 / (T**2)
+    dk_dd = 16 * np.pi**2 * m * d / (T**2)
+    dk_dT = -16 * np.pi**2 * m * d**2 / (T**3)
+    square_result = (u_m * dk_dm)**2 + (u_d * dk_dd)**2 + (u_T * dk_dT)**2
+    return np.sqrt(square_result)
+
+small_m_best_guess = 0.015
+small_m_uncertainty = 0
+
+for i in range(len(T_best_guesses)):
+    print('torsion constant', Output.print_with_uncertainty(k_best_guess(small_m_best_guess, d_best_guess, T_best_guesses[i]), k_uncertainty(small_m_best_guess, d_best_guess, T_best_guesses[i], small_m_uncertainty, d_uncertainty, T_uncertainties[i])))
+
+
+print('R', Output.print_with_uncertainty(R_best_guess, R_uncertainty))
+
+print('M', Output.print_with_uncertainty(m_best_guess, m_uncertainty))
+
+print('w', Output.print_with_uncertainty(w_best_guess, w_uncertainty))
+
+print('L', Output.print_with_uncertainty(l_best_guess, l_uncertainty))
